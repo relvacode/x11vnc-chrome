@@ -30,5 +30,6 @@ RUN apt-get update && apt-get upgrade -y --force-yes && apt-get dist-upgrade -y 
 ADD supervisord.conf /
 ADD default.pa /etc/pulse/default.pa
 ADD fluxbox_init /etc/fluxbox_init
+ADD master_preferences /opt/google/chrome/
 WORKDIR /
 CMD ["/usr/bin/supervisord", "-c", "/supervisord.conf"]

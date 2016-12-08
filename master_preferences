@@ -1,0 +1,19 @@
+ {
+  "homepage": "http://www.google.com", 
+  "homepage_is_newtabpage": false, 
+  "browser": { 
+    "show_home_button": false 
+  }, 
+  "bookmark_bar": { 
+    "show_on_all_tabs": false
+  }, 
+  "distribution": { 
+    "skip_first_run_ui": true, 
+    "import_search_engine": false, 
+    "import_history": false, 
+    "create_all_shortcuts": false, 
+    "do_not_launch_chrome": false, 
+    "make_chrome_default": true
+  }, 
+  "first_run_tabs": [ ] 
+} 
