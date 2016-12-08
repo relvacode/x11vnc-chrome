@@ -21,6 +21,7 @@ RUN apt-get update && apt-get upgrade -y --force-yes && apt-get dist-upgrade -y 
         x11vnc xvfb \
         google-chrome-stable \
         pulseaudio \
+        fluxbox \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -28,5 +29,6 @@ RUN apt-get update && apt-get upgrade -y --force-yes && apt-get dist-upgrade -y 
     
 ADD supervisord.conf /
 ADD default.pa /etc/pulse/default.pa
+ADD fluxbox_init /etc/fluxbox_init
 WORKDIR /
 CMD ["/usr/bin/supervisord", "-c", "/supervisord.conf"]

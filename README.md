@@ -6,7 +6,9 @@ x11vnc-chrome is a Docker image designed for hosting a sandboxed instance of Goo
 ## Features
 
   * Barebones install of Chrome
+  * Fluxbox with minimal configuration (for multi-window support)
   * Pulseaudio server for audio forwarding.
+  * Chrome auto-relaunch (in case all tabs were closed)
 
 ## How To Use
 
@@ -28,4 +30,3 @@ Audio forwarding can also be enabled using Guacamole's audio setting, check `Ena
 ## Bugs
 
   * Chrome requires `--no-sandbox` to prevent it from trying to create new PID namespaces (this results in a warning on startup).
-  * Chrome does not fill the entire remote session display
