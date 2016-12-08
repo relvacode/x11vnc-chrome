@@ -2,6 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Jason Kingsbury <jason@relva.co.uk>
 
 EXPOSE 5900
+EXPOSE 4713
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
@@ -16,14 +17,16 @@ RUN apt-key add /tmp/google_linux_signing_key.pub && echo "deb http://dl.google.
 
 RUN apt-get update && apt-get upgrade -y --force-yes && apt-get dist-upgrade -y --force-yes \
     && apt-get install -y --force-yes --no-install-recommends supervisor \
-       hicolor-icon-theme \
+        hicolor-icon-theme \
         x11vnc xvfb \
         google-chrome-stable \
+        pulseaudio \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
     
     
 ADD supervisord.conf /
+ADD default.pa /etc/pulse/default.pa
 WORKDIR /
 CMD ["/usr/bin/supervisord", "-c", "/supervisord.conf"]
